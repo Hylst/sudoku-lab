@@ -24,7 +24,7 @@ const SLIDES: SlideData[] = [
   {
     image: imgWelcome,
     badge: "✨ Bienvenue",
-    title: "Sudoku Lab",
+    title: "Labo Sudoku",
     subtitle: "Votre nouveau sanctuaire de logique",
     bullets: [
       "Plongez dans une expérience Sudoku immersive avec musique d'ambiance et effets sonores",

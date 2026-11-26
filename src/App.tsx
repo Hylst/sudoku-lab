@@ -381,7 +381,7 @@ export default function App() {
           </div>
           <div>
             <p className="text-[10px] uppercase tracking-[0.4em] text-slate-500">Studio</p>
-            <p className="text-sm font-bold tracking-wide text-slate-200">Sudoku Lab</p>
+            <p className="text-sm font-bold tracking-wide text-slate-200">Labo Sudoku</p>
           </div>
         </div>
         <div className="flex items-center gap-2 text-xs">
@@ -407,7 +407,7 @@ export default function App() {
               {DIFFICULTY_LABELS[difficulty]} · Niv. {level}
             </div>
             <h1 className="sudoku-rise bg-gradient-to-br from-white via-slate-200 to-slate-400 bg-clip-text text-4xl font-black leading-[0.9] tracking-[-0.06em] text-transparent sm:text-6xl">
-              Sudoku Lab
+              Labo Sudoku
             </h1>
             <p className="max-w-sm text-sm leading-6 text-slate-400">
               Créé par <span className="font-semibold text-slate-200">Hylst - Geoffroy</span> avec l'aide d'une IA
@@ -602,7 +602,7 @@ export default function App() {
       </section>
 
       <footer className="relative z-10 border-t border-white/5 px-4 py-5 text-center text-[11px] text-slate-600 sm:px-8">
-        © {new Date().getFullYear()} Sudoku Lab · Conçu par{" "}
+        © {new Date().getFullYear()} Labo Sudoku · Conçu par{" "}
         <span className="font-semibold text-slate-400">Hylst - Geoffroy</span> avec l'aide d'une IA
       </footer>
 

@@ -25,7 +25,7 @@
     "vite": "7.3.2",
     "vite-plugin-singlefile": "2.3.0"
   },
-  "description": "Sudoku Lab : grilles de sudoku, cinq difficultés, chrono, notes, indices et erreurs. Sans compte, sans publicité.",
+  "description": "Labo Sudoku : grilles de sudoku, cinq difficultés, chrono, notes, indices et erreurs. Sans compte, sans publicité.",
   "license": "AGPL-3.0-or-later",
   "author": "Geoffroy (Hylst)"
 }

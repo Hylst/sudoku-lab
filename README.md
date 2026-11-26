@@ -1,12 +1,12 @@
-# Sudoku Lab
+# Labo Sudoku
 
 **Le sudoku en ligne, cinq difficultés, sans compte.**
 
-Sudoku Lab propose des grilles de sudoku jouables au clavier, à la souris ou au doigt, réparties en cinq difficultés : débutant, facile, moyen, difficile et expert. Le chrono démarre avec la grille, le mode notes permet de poser des candidats, les indices remplissent une case et le compteur d'erreurs signale les conflits. La progression, les cases fixes et les commandes clavier sont expliquées dans un onboarding illustré. Le son est synthétisé dans le navigateur.
+Labo Sudoku propose des grilles de sudoku jouables au clavier, à la souris ou au doigt, réparties en cinq difficultés : débutant, facile, moyen, difficile et expert. Le chrono démarre avec la grille, le mode notes permet de poser des candidats, les indices remplissent une case et le compteur d'erreurs signale les conflits. La progression, les cases fixes et les commandes clavier sont expliquées dans un onboarding illustré. Le son est synthétisé dans le navigateur.
 
 Joue ici : [games.hylst.fr/sudoku-lab/](https://games.hylst.fr/sudoku-lab/)
 
-![Sudoku Lab](public/og-image.png)
+![Labo Sudoku](public/og-image.png)
 
 ## Fonctionnalités
 
