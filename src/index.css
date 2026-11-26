@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────
+   Animations
+   ────────────────────────────── */
+
+@keyframes orb-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(30px, 18px, 0) scale(1.06); }
+  66% { transform: translate3d(-20px, 30px, 0) scale(1.02); }
+}
+
+@keyframes orb-slow {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-25px, 35px, 0) scale(1.04); }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes cell-pop {
+  0% { transform: scale(0.88); filter: brightness(1.7); }
+  50% { transform: scale(1.14); filter: brightness(1.3); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+@keyframes conflict-pulse {
+  0%, 100% { box-shadow: inset 0 0 0 0 rgba(244, 63, 94, 0); }
+  50% { box-shadow: inset 0 0 10px 2px rgba(244, 63, 94, 0.5); }
+}
+
+@keyframes board-fill {
+  0% { transform: scale(1); background-color: rgba(255, 255, 255, 0.06); }
+  40% { transform: scale(1.16); background-color: rgba(99, 102, 241, 0.5); }
+  100% { transform: scale(1); }
+}
+
+@keyframes board-selected {
+  0% { transform: scale(1); }
+  55% { transform: scale(1.06); }
+  100% { transform: scale(1.02); }
+}
+
+@keyframes sweep {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes confetti {
+  0% { transform: scale(1) rotate(0deg); filter: brightness(2) saturate(1.6); }
+  50% { transform: scale(1.22) rotate(6deg); filter: brightness(2.2) saturate(2.2); }
+  100% { transform: scale(1) rotate(0deg); filter: brightness(1) saturate(1); }
+}
+
+@keyframes shimmer-number {
+  0% { background-position: 0 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes onboard-enter-right {
+  from { opacity: 0; transform: translateX(40px) scale(0.96); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes onboard-enter-left {
+  from { opacity: 0; transform: translateX(-40px) scale(0.96); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes onboard-orb {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+  50% { transform: translate(40px, -20px) scale(1.15); opacity: 0.3; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ──────────────────────────────
+   Animation classes
+   ────────────────────────────── */
+
+.sudoku-orb { animation: orb-drift 10s ease-in-out infinite; }
+.sudoku-orb-delayed { animation: orb-drift 13s ease-in-out infinite reverse; }
+.sudoku-orb-slow { animation: orb-slow 16s ease-in-out infinite; }
+.sudoku-rise { animation: rise-in 600ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hint-cell, .solve-cell, .board-fill { animation: cell-pop 320ms ease-out both; }
+.conflict-cell { animation: conflict-pulse 1.1s ease-in-out infinite; }
+.confetti-cell { animation: confetti 650ms ease-out both; }
+.board-selected { animation: board-selected 220ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.onboard-orb { animation: onboard-orb 8s ease-in-out infinite; }
+
+.onboard-slide-right { animation: onboard-enter-right 500ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.onboard-slide-left { animation: onboard-enter-left 500ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+.complete-number {
+  background-image: linear-gradient(110deg, rgba(34, 197, 94, 0.3) 0%, rgba(34, 197, 94, 0.05) 50%, rgba(34, 197, 94, 0.3) 100%);
+  background-size: 200% 100%;
+  animation: shimmer-number 3s linear infinite;
+  color: rgb(187 247 208) !important;
+}
+
+/* ──────────────────────────────
+   Component styles
+   ────────────────────────────── */
+
+.hdr-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: rgba(203, 213, 225, 1);
+  transition: all 0.15s;
+}
+.hdr-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.diff-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.diff-pill:hover {
+  transform: translateY(-1px);
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: rgba(226, 232, 240, 1);
+  transition: all 0.15s;
+  cursor: pointer;
+}
+.action-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.next-level-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 0.85rem 1.5rem;
+  font-weight: 900;
+  font-size: 0.95rem;
+  color: rgba(15, 23, 42, 1);
+  background: linear-gradient(to right, #34d399, #67e8f9, #38bdf8);
+  box-shadow: 0 20px 50px -12px rgba(6, 182, 212, 0.3);
+  transition: transform 0.15s;
+  animation: float 3s ease-in-out infinite;
+}
+.next-level-btn:hover {
+  transform: scale(1.03);
+}
+
+.cell-btn {
+  cursor: pointer;
+}
+.cell-btn:disabled {
+  cursor: default;
+}
+
+.numpad-btn:active:not(:disabled) {
+  transform: scale(0.93);
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* focus ring */
+button:focus-visible {
+  outline: 2px solid rgba(251, 191, 36, 0.7);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(6, 182, 212, 0.3);
+  color: white;
+}
